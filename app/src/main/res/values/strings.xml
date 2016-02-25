@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Steps</string>
+    <string name="total_steps">%1$d Steps</string>
+    <string name="average_steps">%1$d Average Steps / Minute</string>
+</resources>
