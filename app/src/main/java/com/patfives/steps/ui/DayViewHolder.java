@@ -37,6 +37,9 @@ public class DayViewHolder extends RecyclerView.ViewHolder {
     public void bind(DayView dayView){
         dateHeader.setText(dayView.dateHeader);
 
+        totalProgress.resetCount();
+        totalProgress.setText("");
+
         if(dayView.totalSteps > 0) {
             double dailyPercentage = dayView.dailyPercentage;
             if(dailyPercentage > 1){
