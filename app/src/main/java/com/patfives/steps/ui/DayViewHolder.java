@@ -7,6 +7,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.RelativeSizeSpan;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.patfives.steps.R;
@@ -24,7 +25,7 @@ public class DayViewHolder extends RecyclerView.ViewHolder {
     @Bind(R.id.total_steps)
     TextView totalSteps;
     @Bind(R.id.total_progress)
-    ProgressWheel totalProgress;
+    ProgressBar totalProgress;
 
     Context context;
 
@@ -37,17 +38,16 @@ public class DayViewHolder extends RecyclerView.ViewHolder {
     public void bind(DayView dayView){
         dateHeader.setText(dayView.dateHeader);
 
-        totalProgress.resetCount();
-        totalProgress.setText("");
+        totalProgress.setProgress(0);
 
         if(dayView.totalSteps > 0) {
             double dailyPercentage = dayView.dailyPercentage;
             if(dailyPercentage > 1){
                 dailyPercentage = 1;
             }
-            totalProgress.incrementProgress((int) (dailyPercentage * 360));
+            totalProgress.setProgress((int) (dailyPercentage * 100));
         }else{
-            totalProgress.resetCount();
+            totalProgress.setProgress(0);
         }
 
         int totalStrLength = String.valueOf(dayView.totalSteps).length();

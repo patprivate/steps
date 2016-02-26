@@ -28,18 +28,16 @@
         android:background="@color/dark_green"
         android:padding="16dp">
 
-        <com.patfives.steps.ui.ProgressWheel
+        <ProgressBar
             android:id="@+id/total_progress"
-            android:layout_width="52dp"
-            android:layout_height="52dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="4dp"
-            ProgressWheel:pwBarColor="@color/light_green"
-            ProgressWheel:pwBarWidth="3dp"
-            ProgressWheel:pwCircleColor="@color/dark_green"
-            ProgressWheel:pwRimColor="@color/pb_background"
-            ProgressWheel:pwRimWidth="3dp"
-            />
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:padding="2dp"
+            android:progressDrawable="@drawable/progress_ring" />
 
         <TextView
             android:id="@+id/total_steps"
